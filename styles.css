@@ -1,11 +1,78 @@
-body {
-  background: #333;
-  padding-top: 150px;
+@font-face {
+  font-family: xmasfont;
+  src: url('Snowy Christmas.otf');
 }
 
+
+
+/* SNOW */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+	color: white;
+	font-style: italic;
+}
+
+/*Keyframes*/
+@keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-moz-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-webkit-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 50% {background-color:#b4cfe0;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px; background-color:#6b92b9;}
+}
+
+@-ms-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+
+body {
+  background-color: #9593fd; 
+  padding-top: 60%;
+	background-image: url('https://designshack.net/tutorialexamples/letitsnow/snow.png'), url('https://designshack.net/tutorialexamples/letitsnow/snow3.png'), url('https://designshack.net/tutorialexamples/letitsnow/snow2.png');
+	-webkit-animation: snow 20s linear infinite;
+	-moz-animation: snow 20s linear infinite;
+	-ms-animation: snow 20s linear infinite;
+	animation: snow 20s linear infinite;
+}
+
+#container {
+	width: 800px;
+	margin: 200px auto;
+	
+	text-align: center;
+	color: white;
+	font: 100px/1 'Spirax', cursive;
+	
+	text-shadow: 0px 0px 4px rgba(255,255,255, 0.5);
+}
+
+#container p {
+	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+
+/* Christmas-gift */
+
+
 .present {
-  width: 410px;
+  width: 350px;
   margin: 0 auto;
+
 }
 .box, .lid {
   background:
@@ -18,19 +85,21 @@ body {
   margin: 0 auto;
 }
 .box {
-  width: 400px;
-  height: 250px;
+  width: 100%;
+  height: 60%;
+  min-height: 200px;
+
 }
 .lid {
-  width: 400px;
-  height: 70px;
+  width: 100%;
+  height: 40px;
   box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
   z-index: 1;
   padding: 0 2px;
   background-color: rgb(216, 52, 52);
   /* transitions */
   top: 0;
-  left: 0;
+  left: -2;
   transition: 
     top ease-out 0.5s,
     left ease-out 0.5s,
@@ -44,19 +113,20 @@ body {
 }
 .box span:first-child {
   width: 100%;
-  height: 60px;
-  top: 80px;
+  height: 25%;
+  top: 30%;
 }
 .box span:last-child, .lid span {
-  width: 60px;
+  width: 18%;
   height: 100%;
-  left: 170px;
+  left: 45%;
 }
 .lid span {
-  left: 172px;
+  left: 45%;
+
 }
 .promo {
-  font-size: 30px;
+  /* font-size: 2rem; */
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
@@ -65,21 +135,78 @@ body {
   top: 10px;
   transition: all ease-out 0.7s;
 }
+
 .promo p {
-  font-size: 24px;
+  font-family: xmasfont;
+  
+  
+  font-size: 6rem;
+  /* font-size: 24px; */
   margin: 0;
 }
 .promo h2 {
-  font-size: 40px;
+  font-family: xmasfont;
+  line-height: 3rem;
+  font-size: 5rem;
+  /* font-size: 40px; */
+
   margin: 0;
 }
 
 /* hover effects */
 .present:hover .lid {
-  top: -100px;
+  top: -200px;
   transform: rotateZ(10deg);
   left: 10px;
 }
 .present:hover .promo {
-  top: -80px;
+  top: -170px;
 }
+
+/* Responsive design - mobile */
+
+@media screen and (max-width: 480px){
+
+  body {
+    padding-top: 70%;
+  }
+  .box  {
+    width: 70%;
+    height: 40%;
+    min-height: 100px;
+    
+  }
+  .lid {
+    width: 70%;
+    left: 1px;
+  }
+
+  .promo p {
+    font-family: xmasfont;
+    
+    
+    font-size: 4rem;
+    /* font-size: 24px; */
+    margin: 0;
+  }
+  .promo h2 {
+    font-family: xmasfont;
+    line-height: 1rem;
+    font-size: 3rem;
+    /* font-size: 40px; */
+  
+    margin: 0;
+  }
+  /* hover effects */
+.present:hover .lid {
+  top: -130px;
+  transform: rotateZ(10deg);
+  left: 10px;
+}
+.present:hover .promo {
+  top: -100px;
+}
+
+}
+
+
