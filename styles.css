@@ -42,7 +42,7 @@ a {
 
 body {
   background-color: #9593fd; 
-  padding-top: 60%;
+  padding-top: 20%;
 	background-image: url('https://designshack.net/tutorialexamples/letitsnow/snow.png'), url('https://designshack.net/tutorialexamples/letitsnow/snow3.png'), url('https://designshack.net/tutorialexamples/letitsnow/snow2.png');
 	-webkit-animation: snow 20s linear infinite;
 	-moz-animation: snow 20s linear infinite;
@@ -164,7 +164,16 @@ body {
 }
 
 /* Responsive design - mobile */
-
+@media screen and (max-width: 1200px){
+  body {
+    padding-top: 50%;
+  }
+}
+@media screen and (min-width:750px){
+  body {
+    padding-top: 31%;
+  }
+}
 @media screen and (max-width: 480px){
 
   body {
